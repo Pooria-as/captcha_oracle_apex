@@ -31,3 +31,8 @@ end;
 ```
 
 ## 2. Add Two Page Items
+
+| Item Name          | Type        | Notes                                |
+| ------------------ | ----------- | ------------------------------------ |
+| P9999_USER_CAPTCHA | Text Input  | Visible - User enters CAPTCHA here   |
+| P9999_CAPTCHA_CODE | Hidden Item | Stores server-generated CAPTCHA code |
