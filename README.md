@@ -29,10 +29,4 @@ begin
     :P9999_CAPTCHA_CODE := l_captcha;
 end;
 
-| Item Name            | Type        | Description                             |
-| -------------------- | ----------- | --------------------------------------- |
-| `P9999_USER_CAPTCHA` | Text Input  | Visible field where user enters CAPTCHA |
-| `P9999_CAPTCHA_CODE` | Hidden Item | Stores server-generated code            |
-
-
-
+```
