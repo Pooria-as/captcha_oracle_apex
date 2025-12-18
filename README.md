@@ -29,3 +29,5 @@ begin
     :P9999_CAPTCHA_CODE := l_captcha;
 end;
 ```
+
+2. Add Two Page Items
