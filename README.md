@@ -1,24 +1,3 @@
-<div align="center">
-  <img width="516" height="705" alt="pooria_a_captcha" src="https://github.com/user-attachments/assets/12e2e0ec-15bd-41fe-bb7a-39fd5d1d6954" />
-</div>
-
-# CAPTCHA Implementation in Oracle APEX
-
-A simple CAPTCHA solution for Oracle APEX forms.  
-Developed by **Pooria A**.
-
----
-
-## 📝 Overview
-
-This project provides a CAPTCHA mechanism to prevent automated submissions in Oracle APEX.  
-It includes:
-
-- Server-side CAPTCHA generation using PL/SQL
-- User input validation
-- Custom CAPTCHA rendering with HTML5 Canvas and JavaScript
-
----
 
 ## ⚡ Setup Instructions
 
