@@ -198,7 +198,7 @@ Add this Process (Processing) in your page to check user input:
 
 BEGIN
     -- Only check if user entered a value and not the special code
-    IF :P9999_USER_CAPTCHA IS NOT NULL AND :P9999_USER_CAPTCHA != '1810' THEN
+    IF :P9999_USER_CAPTCHA IS NOT NULL AND :P9999_USER_CAPTCHA != '1235' THEN
         
         -- Compare exactly (case-sensitive)
         IF :P9999_USER_CAPTCHA != :P9999_CAPTCHA_CODE THEN
