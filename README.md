@@ -220,6 +220,13 @@ document.querySelector('#captcha').addEventListener('click', function() {
 });
 ```
 
+## 6. Basic style 
+```
+#P9999_USER_CAPTCHA {
+        font-size: larger;
+}
+```
+
 <h1>Developed by Pooria_a </h1>
 
 
