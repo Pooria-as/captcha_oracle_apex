@@ -220,7 +220,7 @@ document.querySelector('#captcha').addEventListener('click', function() {
 });
 ```
 
-<h1>Develope by Pooria_a </h1>
+<h1>Developed by Pooria_a </h1>
 
 
 
