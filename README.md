@@ -1,4 +1,4 @@
-## CAPTCHA Implementation in Oracle APEX
+## CAPTCHA Implementation in Oracle APEX simple way
 A complete guide to implementing a dynamic CAPTCHA in Oracle APEX, including server-side generation, client-side rendering, and validation.
 
 <div align="center">
