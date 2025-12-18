@@ -212,7 +212,13 @@ BEGIN
 
     END IF;
 END;
-
-
 ```
+## 5. For new captcha code use this in page level js code (Function and Global Variable Declaration) : 
+```
+document.querySelector('#captcha').addEventListener('click', function() {
+  window.location.reload()
+});
+``
+
+
 
