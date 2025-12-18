@@ -18,7 +18,7 @@ A complete guide to implementing a dynamic CAPTCHA in Oracle APEX, including ser
 
 ## 2. Server-side CAPTCHA Generation
 
-Add this **Before Header Process** in your page to generate a random CAPTCHA code:
+Add this **Before Header Process** in your page to generate a random CAPTCHA code with name of generate_captcha:
 
 ```plsql
 declare
