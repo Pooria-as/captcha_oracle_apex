@@ -218,7 +218,9 @@ END;
 document.querySelector('#captcha').addEventListener('click', function() {
   window.location.reload()
 });
-``
+```
+
+<h1>Developer by Pooria_a </h1>
 
 
 
