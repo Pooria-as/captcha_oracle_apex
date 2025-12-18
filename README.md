@@ -46,8 +46,4 @@ end;
 
 
 
----------------add two fileds-----------------------------------------------
-P9999_USER_CAPTCHA    → Text Input (Visible - User enters code here)
-P9999_CAPTCHA_CODE    → Hidden Item (Stores server-generated code)
----------------add two fileds----------------------------------------------
 
