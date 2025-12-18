@@ -26,7 +26,7 @@ It includes:
 
 Add the following PL/SQL code **before the header process**:
 
-```plsql
+
 declare
     l_chars   varchar2(62) := 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789abcdefghijklmnpqrstuvwxyz';
     l_captcha varchar2(10) := '';  -- initialize to empty
