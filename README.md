@@ -7,7 +7,15 @@ A complete guide to implementing a dynamic CAPTCHA in Oracle APEX, including ser
 
 ---
 
-## 1. Server-side CAPTCHA Generation
+
+## 1. Add Two Page Items
+
+| Item Name          | Type        | Notes                                |
+| ------------------ | ----------- | ------------------------------------ |
+| P9999_USER_CAPTCHA | Text Input  | Visible - User enters CAPTCHA here   |
+| P9999_CAPTCHA_CODE | Hidden Item | Stores server-generated CAPTCHA code |
+
+## 2. Server-side CAPTCHA Generation
 
 Add this **Before Header Process** in your page to generate a random CAPTCHA code:
 
@@ -30,9 +38,4 @@ begin
 end;
 ```
 
-## 2. Add Two Page Items
 
-| Item Name          | Type        | Notes                                |
-| ------------------ | ----------- | ------------------------------------ |
-| P9999_USER_CAPTCHA | Text Input  | Visible - User enters CAPTCHA here   |
-| P9999_CAPTCHA_CODE | Hidden Item | Stores server-generated CAPTCHA code |
