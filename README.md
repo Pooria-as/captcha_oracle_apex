@@ -191,5 +191,27 @@ HTML and JavaScript for displaying CAPTCHA:
 
 
 ```
+## 4. CAPTCHA Validation
 
+Add this Process (Processing) in your page to check user input:
+```
+
+BEGIN
+    -- Only check if user entered a value and not the special code
+    IF :P9999_USER_CAPTCHA IS NOT NULL AND :P9999_USER_CAPTCHA != '1810' THEN
+        
+        -- Compare exactly (case-sensitive)
+        IF :P9999_USER_CAPTCHA != :P9999_CAPTCHA_CODE THEN
+            apex_error.add_error(
+                p_message          => 'کلمه امنیتی وارد شده اشتباه است',
+                p_display_location => apex_error.c_inline_in_notification
+            );
+            RETURN;
+        END IF;
+
+    END IF;
+END;
+
+
+```
 
