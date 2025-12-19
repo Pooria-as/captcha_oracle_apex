@@ -50,7 +50,10 @@ HTML and JavaScript for displaying CAPTCHA:
   min-height:100px;
 ">
 
-  <div style="position:relative; display:inline-block;">
+  <!-- backend puts the real captcha value here -->
+  <div id="captchaHolder"
+       data-captcha="&P9999_CAPTCHA_CODE."
+       style="position:relative; display:inline-block;">
 
     <canvas id="captcha" width="400" height="100"
             style="border:1px solid #bbb;background:#f6f6f6; cursor:help;"></canvas>
@@ -73,7 +76,7 @@ HTML and JavaScript for displaying CAPTCHA:
            transition:opacity 0.25s;
            z-index:10;
          ">
-   برای کلمه امنیتی جدید کلیک کنید
+      برای کلمه امنیتی جدید کلیک کنید
 
       <div style="
         position:absolute;
@@ -93,10 +96,16 @@ HTML and JavaScript for displaying CAPTCHA:
 
 <script>
 (function () {
+  const holder = document.getElementById("captchaHolder");
   const canvas = document.getElementById("captcha");
   const ctx = canvas.getContext("2d");
   const tooltip = document.getElementById("captchaTip");
-  const text = "&P9999_CAPTCHA_CODE.";
+
+  const raw = holder.dataset.captcha;
+
+  holder.removeAttribute("data-captcha");
+
+  const text = raw.split("").map(c => c).join("");
 
   const colors = [
     "#e53935", "#1e88e5", "#43a047",
@@ -106,14 +115,12 @@ HTML and JavaScript for displaying CAPTCHA:
   function drawCaptcha() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // background
     const bg = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
     bg.addColorStop(0, "#ffffff");
     bg.addColorStop(1, "#eaeaea");
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // curved lines
     for (let i = 0; i < 8; i++) {
       ctx.strokeStyle = colors[Math.floor(Math.random() * colors.length)] + "80";
       ctx.lineWidth = 3;
@@ -127,22 +134,18 @@ HTML and JavaScript for displaying CAPTCHA:
       ctx.stroke();
     }
 
-    // text
     ctx.font = "48px Arial";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
 
-    // calculate total width of text with gap
     const gap = 42;
     const totalWidth = (text.length - 1) * gap;
     const centerX = canvas.width / 2 - totalWidth / 2;
 
     for (let i = 0; i < text.length; i++) {
       ctx.save();
-      const angle = (Math.random() * 40 - 20) * Math.PI / 180;
-      const yOffset = Math.random() * 16 - 8;
-      ctx.translate(centerX + i * gap, canvas.height / 2 + yOffset);
-      ctx.rotate(angle);
+      ctx.translate(centerX + i * gap, canvas.height / 2 + (Math.random() * 16 - 8));
+      ctx.rotate((Math.random() * 40 - 20) * Math.PI / 180);
 
       const grad = ctx.createLinearGradient(-20, -30, 20, 30);
       grad.addColorStop(0, "#e53935");
@@ -154,7 +157,6 @@ HTML and JavaScript for displaying CAPTCHA:
       ctx.restore();
     }
 
-    // dot noise
     for (let i = 0; i < 250; i++) {
       ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)] + "99";
       ctx.fillRect(
@@ -165,7 +167,6 @@ HTML and JavaScript for displaying CAPTCHA:
       );
     }
 
-    // scratches
     for (let i = 0; i < 10; i++) {
       ctx.strokeStyle = colors[Math.floor(Math.random() * colors.length)] + "aa";
       ctx.lineWidth = 1;
